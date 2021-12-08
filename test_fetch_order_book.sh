@@ -1,6 +1,10 @@
 scripts_path="/Users/sam/Documents/dev/CCXT/test_scripts"
 source "${scripts_path}/helper_functions.sh"
 
+exchange=$1
+symbol=$2
+file="${output_folder}/order_book_test.md"
+
 function test_fetch_order_book() {
     limit=$1
     level=$2
@@ -14,19 +18,15 @@ function test_fetch_order_book() {
     echo "" >> $file
 }
 
-function test_fetch_order_book_tests() {
-    exchange=$1
-    symbol=$2
-    file="${output_folder}/order_book_test.md"
-    ccxt_diagnostics > $file
 
-    test_fetch_order_book 
-    test_fetch_order_book 20
-    test_fetch_order_book 100
-    test_fetch_order_book undefined 2
-    test_fetch_order_book undefined 3
-    test_fetch_order_book 20 2
-    test_fetch_order_book 100 2
-    test_fetch_order_book 20 3
-    test_fetch_order_book 100 3
-}
+ccxt_diagnostics > $file
+
+test_fetch_order_book 
+test_fetch_order_book 20
+test_fetch_order_book 100
+test_fetch_order_book undefined 2
+test_fetch_order_book undefined 3
+test_fetch_order_book 20 2
+test_fetch_order_book 100 2
+test_fetch_order_book 20 3
+test_fetch_order_book 100 3

@@ -1,5 +1,7 @@
 scripts_path="/Users/sam/Documents/dev/CCXT/test_scripts"
 source "${scripts_path}/helper_functions.sh"
+exchange=$1
+file="${output_folder}/fetch_positions_test.md"
 
 function test_fetch_positions() {
     settle=$1
@@ -20,20 +22,15 @@ function test_fetch_positions() {
     echo "------------------------------------------------------------------------------------" >> $file
     echo "" >> $file
 }
-
-function test_fetch_positions_tests() {
     
-    exchange=$1
-    file="${output_folder}/fetch_positions_test.md"
-    ccxt_diagnostics > $file
+ccxt_diagnostics > $file
 
-    test_fetch_positions
-    test_fetch_positions usdt
-    test_fetch_positions btc
-    test_fetch_positions '' swap
-    test_fetch_positions '' futures
-    test_fetch_positions usdt swap
-    test_fetch_positions usdt futures
-    test_fetch_positions btc swap
-    test_fetch_positions btc futures
-}
+test_fetch_positions
+test_fetch_positions usdt
+test_fetch_positions btc
+test_fetch_positions '' swap
+test_fetch_positions '' futures
+test_fetch_positions usdt swap
+test_fetch_positions usdt futures
+test_fetch_positions btc swap
+test_fetch_positions btc futures

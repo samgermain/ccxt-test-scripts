@@ -1,6 +1,11 @@
 scripts_path="/Users/sam/Documents/dev/CCXT/test_scripts"
 source "${scripts_path}/helper_functions.sh"
 
+exchange=$1
+cur=$2
+sym=$3
+file="test-borrow-interest-history.md"
+
 function test_borrow_interest_history() {
     currency=$1
     symbol=$2
@@ -17,18 +22,12 @@ function test_borrow_interest_history() {
     echo "" >> $file
 }
 
-function test_borrow_interest_history_tests() {
-    exchange=$1
-    cur=$2
-    sym=$3
-    file="test-borrow-interest-history.md"
-    ccxt_diagnostics > $file
+ccxt_diagnostics > $file
 
-    test_borrow_interest_history
-    test_borrow_interest_history $cur
-    test_borrow_interest_history undefined $sym
-    test_borrow_interest_history $cur $sym
-    test_borrow_interest_history $cur $sym 1638396000000
-    test_borrow_interest_history $cur $sym undefined 20
-    test_borrow_interest_history $cur $sym 1638396000000 3
-}
+test_borrow_interest_history
+test_borrow_interest_history $cur
+test_borrow_interest_history undefined $sym
+test_borrow_interest_history $cur $sym
+test_borrow_interest_history $cur $sym 1638396000000
+test_borrow_interest_history $cur $sym undefined 20
+test_borrow_interest_history $cur $sym 1638396000000 3

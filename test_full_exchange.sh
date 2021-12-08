@@ -6,32 +6,21 @@ symbol=$2
 code=$3
 file="full_exchange_test.md"
 
-source "${scripts_path}/test_fetch_funding_history.sh"
-source "${scripts_path}/test_fetch_my_trades.sh"
-source "${scripts_path}/test_fetch_ohlcv.sh"
-source "${scripts_path}/test_fetch_order_book.sh"
-source "${scripts_path}/test_fetch_positions.sh"
-source "${scripts_path}/test_fetch_trades.sh"
-source "${scripts_path}/test_order.sh"
-source "${scripts_path}/test_transfer.sh"
-
-test_fetch_funding_history_tests $exchange $symbol
+"${scripts_path}/test_fetch_funding_history.sh" $exchange $symbol
 sleep 1
-test_fetch_my_trades_tests $exchange $symbol
+"${scripts_path}/test_fetch_my_trades.sh" $exchange $symbol
 sleep 1
-test_fetch_ohlcv_tests $exchange $symbol
+"${scripts_path}/test_fetch_ohlcv.sh" $exchange $symbol
 sleep 1
-test_fetch_order_book_tests $exchange $symbol
+"${scripts_path}/test_fetch_order_book.sh" $exchange $symbol
 sleep 3
-test_fetch_positions_tests $exchange $symbol
+"${scripts_path}/test_fetch_positions.sh" $exchange $symbol
 sleep 1
-test_fetch_trades_tests $exchange $symbol
+"${scripts_path}/test_fetch_trades.sh" $exchange $symbol
 sleep 1
-test_order_book_tests $exchange $symbol
+"${scripts_path}/test_order.sh" $exchange $symbol
 sleep 1
-test_order_tests $exchange $symbol
-sleep 1
-test_transfer_tests $exchange $code
+"${scripts_path}/test_transfer.sh" $exchange $symbol
 sleep 1
 
 node $ccxt_path $exchange fetchAccounts >> $file
