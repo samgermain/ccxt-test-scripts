@@ -34,16 +34,16 @@ function test_symbol_since_limit() {
 function test_symbol_since_limit_tests() {
     
     method=$1
-    # symbol=$2
-    exchange=$3
+    exchange=$2
+    # symbol=$3
     file="${output_folder}/${method}.md"
     ccxt_diagnostics > $file
 
     test_symbol_since_limit
-    test_symbol_since_limit $2
-    test_symbol_since_limit $2 1635724800000
-    test_symbol_since_limit $2 undefined 5
-    test_symbol_since_limit $2 1635724800000 5
+    test_symbol_since_limit $3
+    test_symbol_since_limit $3 1635724800000
+    test_symbol_since_limit $3 undefined 5
+    test_symbol_since_limit $3 1635724800000 5
 }
 
 function ccxt_diagnostics() {
