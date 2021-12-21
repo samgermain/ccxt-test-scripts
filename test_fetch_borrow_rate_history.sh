@@ -18,7 +18,7 @@ function test_borrow_rate_history() {
     fi
     echo "### currency=${currency}, since=${since}, date=${d} limit=${limit}, params=${params}" >> $file
     echo '```' >> $file
-    node $cli $exchange fetchBorrowRateHistory $currency $since $limit $tier 2>&1 | condense_output >> $file
+    node $ccxt_path $exchange fetchBorrowRateHistory $currency $since $limit "$params" 2>&1 | condense_output >> $file
     echo '```' >> $file
     echo "" >> $file
 }
