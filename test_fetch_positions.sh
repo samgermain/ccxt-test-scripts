@@ -29,8 +29,8 @@ test_fetch_positions
 test_fetch_positions usdt
 test_fetch_positions btc
 test_fetch_positions '' swap
-test_fetch_positions '' futures
+test_fetch_positions '' future
 test_fetch_positions usdt swap
-test_fetch_positions usdt futures
+test_fetch_positions usdt future
 test_fetch_positions btc swap
-test_fetch_positions btc futures
+test_fetch_positions btc future

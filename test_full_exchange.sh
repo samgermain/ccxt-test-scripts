@@ -7,14 +7,14 @@ code=$3
 file="${scripts_path}/test_output/full_exchange_test.md"
 ccxt_diagnostics > $file
 
-# "${scripts_path}/test_fetch_funding_history.sh" $exchange $symbol
-# "${scripts_path}/test_fetch_my_trades.sh" $exchange $symbol
-# "${scripts_path}/test_fetch_ohlcv.sh" $exchange $symbol
-# "${scripts_path}/test_fetch_order_book.sh" $exchange $symbol
-# "${scripts_path}/test_fetch_positions.sh" $exchange $symbol
-# "${scripts_path}/test_fetch_trades.sh" $exchange $symbol
+"${scripts_path}/test_fetch_funding_history.sh" $exchange $symbol
+"${scripts_path}/test_fetch_my_trades.sh" $exchange $symbol
+"${scripts_path}/test_fetch_ohlcv.sh" $exchange $symbol
+"${scripts_path}/test_fetch_order_book.sh" $exchange $symbol
+"${scripts_path}/test_fetch_positions.sh" $exchange $symbol
+"${scripts_path}/test_fetch_trades.sh" $exchange $symbol
 # "${scripts_path}/test_order.sh" $exchange $symbol
-# "${scripts_path}/test_transfer.sh" $exchange $symbol
+"${scripts_path}/test_transfer.sh" $exchange $code
 
 printf "\n## createDepositAddress\n" >> $file
 node $ccxt_path $exchange createDepositAddress $code 2>&1 >> $file

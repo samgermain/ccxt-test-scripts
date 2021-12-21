@@ -21,26 +21,26 @@ ccxt_diagnostics > $file
 
 test_transfer $code spot trade
 test_transfer $code spot trading
-test_transfer $code spot futures
+test_transfer $code spot future
 test_transfer $code spot contract
 
 test_transfer $code trade spot
 test_transfer $code trade trading
-test_transfer $code trade futures
+test_transfer $code trade future
 test_transfer $code trade contract
 
 test_transfer $code trading spot
 test_transfer $code trading trade
-test_transfer $code trading futures
+test_transfer $code trading future
 test_transfer $code trading contract
 
-test_transfer $code futures spot
-test_transfer $code futures trade
-test_transfer $code futures trading
-test_transfer $code futures contract
+test_transfer $code future spot
+test_transfer $code future trade
+test_transfer $code future trading
+test_transfer $code future contract
 
 test_transfer $code contract spot
 test_transfer $code contract trade
 test_transfer $code contract trading
-test_transfer $code contract futures
+test_transfer $code contract future
 
